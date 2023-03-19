@@ -1,0 +1,26 @@
+public class NurseActivity extends AppCompatActivity {
+
+    private TextView jobTitleTextView;
+    private TextView jobDescriptionTextView;
+    private ListView stepsListView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_nurse);
+
+        jobTitleTextView = findViewById(R.id.job_title_text_view);
+        jobDescriptionTextView = findViewById(R.id.job_description_text_view);
+        stepsListView = findViewById(R.id.steps_list_view);
+
+        jobTitleTextView.setText(R.string.nurse_title);
+        jobDescriptionTextView.setText(R.string.nurse_description);
+
+        // Initialize steps array
+        String[] steps = getResources().getStringArray(R.array.nurse_steps);
+
+        // Create adapter for steps list view
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, steps);
+        stepsListView.setAdapter(adapter);
+    }
+}

@@ -1,0 +1,13 @@
+public class SoftwareEngineerActivity extends AppCompatActivity {
+
+    private WebView webView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_software_engineer);
+
+        webView = findViewById(R.id.web_view);
+        webView.loadUrl("https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm");
+    }
+}
